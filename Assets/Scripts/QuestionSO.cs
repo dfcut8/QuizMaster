@@ -5,4 +5,9 @@ public class QuestionSO : ScriptableObject
 {
     [TextArea(2,6)]
     [SerializeField] private string question = "Sample question?";
+
+    public string GetQuestion()
+    {
+        return question;
+    }
 }
