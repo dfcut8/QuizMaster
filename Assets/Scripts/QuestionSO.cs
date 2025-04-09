@@ -1,13 +1,11 @@
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Quiz Question", fileName = "new_question")]
 public class QuestionSO : ScriptableObject
 {
     [TextArea(2,6)]
-    [SerializeField] private string question = "Sample question?";
-
-    public string GetQuestion()
-    {
-        return question;
-    }
+    public string Question = "Sample question?";
+    public string[] Answers = new string[4];
 }
