@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dfe75e56557876489282a1a7ae91ef3, type: 3}
   m_Name: new_question
   m_EditorClassIdentifier: 
-  question: What planet is closest to the sun?
+  Question: Q1
+  Answers:
+  - A1
+  - A2
+  - A3
+  - A4
+  correctAnswerIndex: 0

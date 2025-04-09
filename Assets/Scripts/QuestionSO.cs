@@ -6,6 +6,12 @@ using UnityEngine;
 public class QuestionSO : ScriptableObject
 {
     [TextArea(2,6)]
-    public string Question = "Sample question?";
-    public string[] Answers = new string[4];
+    [SerializeField] private string question = "Sample question?";
+    [SerializeField] private string[] answers = new string[4];
+    [SerializeField] private int correctAnswerIndex = 0;
+
+    // Getters
+    public string GetQuestion => question;
+    public string[] GetAnswers => answers;
+    public int GetCorrectAnswerIndex => correctAnswerIndex;
 }
