@@ -11,7 +11,7 @@ public class QuestionSO : ScriptableObject
     [SerializeField] private int correctAnswerIndex = 0;
 
     // Getters
-    public string GetQuestion => question;
-    public string[] GetAnswers => answers;
-    public int GetCorrectAnswerIndex => correctAnswerIndex;
+    public string GetQuestion() => question;
+    public string[] GetAnswers() => answers;
+    public int GetCorrectAnswerIndex() => correctAnswerIndex;
 }
