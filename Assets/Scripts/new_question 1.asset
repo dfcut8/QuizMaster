@@ -13,3 +13,9 @@ MonoBehaviour:
   m_Name: new_question 1
   m_EditorClassIdentifier: 
   question: What is the most populated city in Australia?
+  answers:
+  - Minsk
+  - Denver
+  - Berlin
+  - Cairo
+  correctAnswerIndex: 0

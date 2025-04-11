@@ -440,6 +440,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questionText: {fileID: 109586292}
   question: {fileID: 11400000, guid: 5b4d97dbb158adb4b8d8bd95d109afea, type: 2}
+  answerButtons:
+  - {fileID: 769419976}
+  - {fileID: 587835676}
+  - {fileID: 881848139}
+  - {fileID: 2106820481}
 --- !u!1 &294062286
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,6 +1038,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 569281320}
   m_CullTransparentMesh: 1
+--- !u!1 &587835676 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5106201521424021219, guid: 77a66957bf6145a49a5f3e15b8287969, type: 3}
+  m_PrefabInstance: {fileID: 1986231747}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &596483285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,6 +1364,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 40
+--- !u!1 &769419976 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5106201521424021219, guid: 77a66957bf6145a49a5f3e15b8287969, type: 3}
+  m_PrefabInstance: {fileID: 137037990410736109}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &881848139 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5106201521424021219, guid: 77a66957bf6145a49a5f3e15b8287969, type: 3}
+  m_PrefabInstance: {fileID: 333562793}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1507853288
 GameObject:
   m_ObjectHideFlags: 0
@@ -1642,6 +1662,11 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7710956900060648390, guid: 77a66957bf6145a49a5f3e15b8287969, type: 3}
   m_PrefabInstance: {fileID: 1986231747}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2106820481 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5106201521424021219, guid: 77a66957bf6145a49a5f3e15b8287969, type: 3}
+  m_PrefabInstance: {fileID: 507693322}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &137037990410736109
 PrefabInstance:
