@@ -448,6 +448,7 @@ MonoBehaviour:
   - {fileID: 2106820481}
   defaultAnswerSprite: {fileID: -2421234149185767044, guid: fbcdb8c924b33f2458c6f69dfeb4c573, type: 3}
   correctAnswerSprite: {fileID: -4659264650518790821, guid: aaee205c0ed0b2f4294492df1b0d1063, type: 3}
+  timerImage: {fileID: 1354316644}
 --- !u!1 &294062286
 GameObject:
   m_ObjectHideFlags: 0
@@ -1453,7 +1454,7 @@ GameObject:
   - component: {fileID: 1354316645}
   - component: {fileID: 1354316644}
   m_Layer: 5
-  m_Name: Image
+  m_Name: TimerImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1743,9 +1744,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd2f799130dac5f4a974d6d8e92eff73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToComplete: 5
+  timeToComplete: 30
   timeToShowAnswer: 10
   IsAnsweringQuestion: 0
+  IsLoadNextQuestion: 0
+  FillFraction: 0
 --- !u!224 &1955457187 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7710956900060648390, guid: 77a66957bf6145a49a5f3e15b8287969, type: 3}

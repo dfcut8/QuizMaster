@@ -4,17 +4,32 @@ using UnityEngine.UI;
 
 public class Quiz : MonoBehaviour
 {
+    [Header("Questions")]
     [SerializeField] private TextMeshProUGUI questionText;
     [SerializeField] private QuestionSO question;
+
+    [Header("Answers")]
     [SerializeField] private GameObject[] answerButtons;
 
     [SerializeField] private Sprite defaultAnswerSprite;
     [SerializeField] private Sprite correctAnswerSprite;
-    private int correctAnswerIndex;
+
+    [Header("Timer")]
+    [SerializeField] private Image timerImage;
+
+    Timer timer;
+    int correctAnswerIndex;
 
     public void Start()
     {
+        // timer = FindAnyObjectByType<Timer>();
+        timer = GetComponentInChildren<Timer>();
         GetNextQuestion();
+    }
+
+    public void Update()
+    {
+        timerImage.fillAmount = timer.FillFraction;
     }
 
     public void OnAnswerSelected(int index)
