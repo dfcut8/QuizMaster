@@ -16,7 +16,7 @@ public class Timer : MonoBehaviour
 
     void Start()
     {
-        timerImage = GetComponent<Image>();
+        timerImage = GetComponentInChildren<Image>();
     }
     void Update()
     {
@@ -31,6 +31,7 @@ public class Timer : MonoBehaviour
         {
             if (timerValue > 0)
             {
+                timerImage.color = Color.white;
                 FillFraction = timerValue / timeToComplete;
             }
             else
