@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using Mono.Cecil;
 
 public class Quiz : MonoBehaviour
 {
@@ -14,7 +13,8 @@ public class Quiz : MonoBehaviour
 
     void Start()
     {
-        DisplayQuestion();
+        // DisplayQuestion();
+        GetNextQuestion();
     }
 
     public void OnAnswerSelected(int index)
@@ -39,8 +39,19 @@ public class Quiz : MonoBehaviour
     private void GetNextQuestion()
     {
         SetButtonsState(true);
+        SetDefaultButtonsSprite();
         DisplayQuestion();
     }
+
+    private void SetDefaultButtonsSprite()
+    {
+        foreach (var b in answerButtons)
+        {
+            Image buttonImage = b.GetComponent<Image>();
+            buttonImage.sprite = defaultAnswerSprite;
+        }
+    }
+
     private void DisplayQuestion()
     {
         questionText.text = question.GetQuestion();
@@ -61,7 +72,7 @@ public class Quiz : MonoBehaviour
         }
     }
 
-        private void SetButtonsState(bool state)
+    private void SetButtonsState(bool state)
     {
         foreach (var button in answerButtons)
         {
