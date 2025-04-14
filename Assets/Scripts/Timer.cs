@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
@@ -11,6 +12,12 @@ public class Timer : MonoBehaviour
 
     float timerValue;
 
+    Image timerImage;
+
+    void Start()
+    {
+        timerImage = GetComponent<Image>();
+    }
     void Update()
     {
         UpdateTimer();
@@ -36,6 +43,11 @@ public class Timer : MonoBehaviour
         {
             if (timerValue > 0)
             {
+                Color newColor;
+                if (ColorUtility.TryParseHtmlString("#00FF99", out newColor))
+                {
+                    timerImage.color = newColor;
+                }
                 FillFraction = timerValue / timeToShowAnswer;
             }
             else
