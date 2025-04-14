@@ -14,13 +14,7 @@ public class Quiz : MonoBehaviour
 
     void Start()
     {
-        questionText.text = question.GetQuestion();
-        var answers = question.GetAnswers();
-        for (int i = 0; i < answerButtons.Length; i++)
-        {
-            var buttonText = answerButtons[i].GetComponentInChildren<TextMeshProUGUI>();
-            buttonText.text = answers[i];
-        }
+        DisplayQuestion();
     }
 
     public void OnAnswerSelected(int index)
@@ -37,6 +31,42 @@ public class Quiz : MonoBehaviour
             questionText.text = $"BAD BAD BAD! :(\nCorrect answer: {correctAnswerText}";
             Image buttonImage = answerButtons[correctAnswerIndex].GetComponent<Image>();
             buttonImage.sprite = correctAnswerSprite;
+        }
+
+        SetButtonsState(false);
+    }
+
+    private void GetNextQuestion()
+    {
+        SetButtonsState(true);
+        DisplayQuestion();
+    }
+    private void DisplayQuestion()
+    {
+        questionText.text = question.GetQuestion();
+        var answers = question.GetAnswers();
+        for (int i = 0; i < answerButtons.Length; i++)
+        {
+            var buttonText = answerButtons[i].GetComponentInChildren<TextMeshProUGUI>();
+            buttonText.text = answers[i];
+        }
+    }
+
+    private void ToggleButtons()
+    {
+        foreach (var button in answerButtons)
+        {
+            var bComponent = button.GetComponent<Button>();
+            bComponent.interactable = !bComponent.interactable;
+        }
+    }
+
+        private void SetButtonsState(bool state)
+    {
+        foreach (var button in answerButtons)
+        {
+            var bComponent = button.GetComponent<Button>();
+            bComponent.interactable = state;
         }
     }
 }
