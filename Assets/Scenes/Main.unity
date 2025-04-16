@@ -454,6 +454,7 @@ MonoBehaviour:
   defaultAnswerSprite: {fileID: -2421234149185767044, guid: fbcdb8c924b33f2458c6f69dfeb4c573, type: 3}
   correctAnswerSprite: {fileID: -4659264650518790821, guid: aaee205c0ed0b2f4294492df1b0d1063, type: 3}
   timerImage: {fileID: 1354316644}
+  scoreText: {fileID: 1275561077}
 --- !u!1 &294062286
 GameObject:
   m_ObjectHideFlags: 0
