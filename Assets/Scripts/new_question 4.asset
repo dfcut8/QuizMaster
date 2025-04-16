@@ -13,3 +13,9 @@ MonoBehaviour:
   m_Name: new_question 4
   m_EditorClassIdentifier: 
   question: Who is Batman's sidekick?
+  answers:
+  - Red
+  - Blue
+  - Dark
+  - Knight
+  correctAnswerIndex: 0

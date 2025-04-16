@@ -13,3 +13,9 @@ MonoBehaviour:
   m_Name: new_question 3
   m_EditorClassIdentifier: 
   question: What is the currency of Denmark?
+  answers:
+  - $
+  - '#'
+  - '!'
+  - ^
+  correctAnswerIndex: 0
