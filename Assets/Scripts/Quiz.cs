@@ -11,6 +11,7 @@ public class Quiz : MonoBehaviour
     [Header("Answers")]
     [SerializeField] private GameObject[] answerButtons;
 
+    [Header("Buttons")]
     [SerializeField] private Sprite defaultAnswerSprite;
     [SerializeField] private Sprite correctAnswerSprite;
 
@@ -19,6 +20,7 @@ public class Quiz : MonoBehaviour
 
     Timer timer;
     int correctAnswerIndex;
+    bool hasAnsweredEarly = false;
 
     public void Start()
     {
@@ -32,12 +34,26 @@ public class Quiz : MonoBehaviour
         timerImage.fillAmount = timer.FillFraction;
         if (timer.IsLoadNextQuestion)
         {
+            hasAnsweredEarly = false;
             GetNextQuestion();
             timer.IsLoadNextQuestion = false;
+        }
+        else if (!hasAnsweredEarly && !timer.IsAnsweringQuestion)
+        {
+            DisplayAnswer(-1);
+            SetButtonsState(false);
         }
     }
 
     public void OnAnswerSelected(int index)
+    {
+        hasAnsweredEarly = true;
+        DisplayAnswer(index);
+        SetButtonsState(false);
+        timer.CancelTimer();
+    }
+
+    private void DisplayAnswer(int index)
     {
         if (index == question.GetCorrectAnswerIndex())
         {
@@ -52,9 +68,6 @@ public class Quiz : MonoBehaviour
             Image buttonImage = answerButtons[correctAnswerIndex].GetComponent<Image>();
             buttonImage.sprite = correctAnswerSprite;
         }
-
-        SetButtonsState(false);
-        timer.CancelTimer();
     }
 
     private void GetNextQuestion()
