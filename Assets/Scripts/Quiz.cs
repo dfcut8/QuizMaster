@@ -33,9 +33,9 @@ public class Quiz : MonoBehaviour
     Timer timer;
     Score score;
     int correctAnswerIndex;
-    bool hasAnsweredEarly = false;
+    bool hasAnsweredEarly = true;
 
-    public void Start()
+    public void Awake()
     {
         timer = GetComponentInChildren<Timer>();
         score = GetComponentInChildren<Score>();
@@ -49,6 +49,10 @@ public class Quiz : MonoBehaviour
         timerImage.fillAmount = timer.FillFraction;
         if (timer.IsLoadNextQuestion)
         {
+            if (progressBarObj.value == progressBarObj.maxValue)
+            {
+                IsCompleted = true;
+            }
             hasAnsweredEarly = false;
             GetNextQuestion();
             timer.IsLoadNextQuestion = false;
@@ -67,11 +71,6 @@ public class Quiz : MonoBehaviour
         SetButtonsState(false);
         timer.CancelTimer();
         scoreText.text = $"Score: {score.CalculateScore()}%";
-
-        if (progressBarObj.value == progressBarObj.maxValue)
-        {
-            IsCompleted = true;
-        }
     }
 
     private void DisplayAnswer(int index)

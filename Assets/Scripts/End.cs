@@ -5,14 +5,9 @@ public class End : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI finalScoreText;
     Score score;
-    void Start()
+    void Awake()
     {
         score = FindAnyObjectByType<Score>();
-    }
-
-    void Update()
-    {
-
     }
 
     public void ShowFinalScore()
