@@ -27,9 +27,7 @@ public class Quiz : MonoBehaviour
 
     public void Start()
     {
-        // timer = FindAnyObjectByType<Timer>();
         timer = GetComponentInChildren<Timer>();
-        GetNextQuestion();
     }
 
     public void Update()
@@ -75,10 +73,18 @@ public class Quiz : MonoBehaviour
 
     private void GetNextQuestion()
     {
-        SetButtonsState(true);
-        SetDefaultButtonsSprite();
-        GetRandomQuestion();
-        DisplayQuestion();
+        if (questions.Count > 0)
+        {
+            SetButtonsState(true);
+            SetDefaultButtonsSprite();
+            GetRandomQuestion();
+            DisplayQuestion();
+        }
+        else
+        {
+            // end the game
+        }
+
     }
 
     private void GetRandomQuestion()
